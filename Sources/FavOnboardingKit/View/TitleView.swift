@@ -8,17 +8,19 @@
 import UIKit
 
 class TitleView: UIView {
-    private let titleLabel: UILabel = {
+    private let themeFont: UIFont
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "ArialRoundedMTBold", size: 28)
+        label.font = themeFont
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 2
         label.textAlignment = .center
         return label
     }()
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(themeFont: UIFont) {
+        self.themeFont = themeFont
+        super.init(frame: .zero)
         layout()
     }
     
